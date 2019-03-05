@@ -1,1 +1,78 @@
+body {
+    font-family: 'Fjalla One', sans-serif;
+    text-align: center;
+}
 
+p {
+    padding: 100px;
+}
+
+ul {
+    list-style-position: inside;
+}
+
+h2 {
+    background-color: black;
+    color: white;
+    padding: 15px;
+    margin-right: 200px;
+    margin-left: 200px;
+    font-size: 20px;
+}
+
+.delete {
+    display: block;
+    margin-left: auto;
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+p:hover .delete {
+    display: block;
+    background-color: black !important;
+    color: white !important;
+
+}
+
+.button {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+a:visited {
+    color: white;
+}

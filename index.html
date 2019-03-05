@@ -1,1 +1,45 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles.css" />
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+    <title>Color Scheme Generator</title>
+</head>
+
+<body>
+    <h1> Welcome to the Color Scheme Generator!</h1>
+    <h2> How It Works:
+        <ul>
+            <li> Use the "Add a Color" button to randomly generate a new color.</li>
+            <li> Use the "Clear" button to reset your colors.</li>
+            <li> Hover over a color and click the "X" button to delete that color. </li>
+            <li> Hover over a color and click the "*" button to replace that color. </li>
+            <li> Drag and drop colors to rearrange their order.</li>
+            <li> The color API can sometimes be slow - sorry about that!</li>
+        </ul>
+    </h2>
+    <div id="app">
+        <button class="button" v-on:click="addColor">Add a Color</button>
+        <button class="button" v-on:click="clearColors">Clear</button>
+        <br>
+        <br>
+        <div class="row">
+            <div class="column" v-for="color in colors" draggable="true" v-on:dragstart="dragItem(color)" v-on:dragover.prevent v-on:drop="dropItem(color)">
+                <p v-bind:style="{ backgroundColor: color}">
+                    <button v-on:click="deleteColor(color)" class="delete" v-bind:style="{ backgroundColor: color, color: color}">X</button>
+                    <button v-on:click="changeColor(color)" class="delete" v-bind:style="{ backgroundColor: color, color: color}">*</button>
+                </p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <a href="https://github.com/annielarkins/creativeproject3">Github Repository</a>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/script.js"></script>
+</body>
+
+</html>
